@@ -1,0 +1,14 @@
+<div class="file-upload-container" [class.drag-over]="dragOver"
+     (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+  <input type="file" id="fileInput" (change)="onFileChange($event)" hidden />
+  <label for="fileInput" class="file-upload-label">
+    Drag and drop a file here, or click to select a file
+  </label>
+</div>
+
+<div class="language-select">
+  <label for="language">Select target language:</label>
+  <select id="language" [(ngModel)]="selectedLanguage" (change)="onLanguageChange($event)">
+    <option *ngFor="let lang of supportedLanguages" [value]="lang">{{ lang }}</option>
+  </select>
+</div>
